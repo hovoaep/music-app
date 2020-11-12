@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Trần Văn Tiến",
+    "user": "tientv",
+    "password": "tientv01",
+    "sex": {
+      "id": 1,
+      "name": "nam"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Nguyễn Thị Duyên",
+    "user": "duyennt",
+    "password": "duyennt01",
+    "sex": {
+      "id": 2,
+      "name": "nữ"
+    }
+  }
+]

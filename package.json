@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "postcss": "^8.1.7",
+    "postcss-css-variables": "^0.17.0",
+    "react-native-postcss-transformer": "^1.2.4",
+    "react-native-sass-transformer": "^1.4.0"
+  }
+}
