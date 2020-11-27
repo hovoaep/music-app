@@ -6,25 +6,28 @@ import {Alert} from 'react-native';
 import {globalStateRepository} from '../repository/global-state-repository';
 
 export class LoginService {
-  public useLogin = (user: string, password: string): [() => void] => {
+  public useLogin = (
+    user: string,
+    password: string,
+    navigation: any,
+  ): [() => void] => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const handleLogin = React.useCallback(() => {
       const userCurrent = listUser.find((u: {user: string}) => u.user === user);
 
       if (userCurrent) {
         if (userCurrent.password === password) {
-          Alert.alert('Thành công');
-          appAsyncStorage
-            .saveUser(userCurrent)
-            .then(() => Alert.alert('Thành công'));
-          globalStateRepository.setUser(userCurrent);
+          appAsyncStorage.saveUser(userCurrent).then(() => {
+            navigation.navigate('HomeScreen');
+          });
+          globalStateRepository.setUser(userCurrent).then();
         } else {
           Alert.alert('Sai mật khẩu');
         }
       } else {
         Alert.alert('User không tồn tại');
       }
-    }, [password, user]);
+    }, [navigation, password, user]);
     return [handleLogin];
   };
 }

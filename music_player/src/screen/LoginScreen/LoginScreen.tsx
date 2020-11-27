@@ -30,7 +30,7 @@ function LoginScreen({navigation, route}: LoginScreenProps) {
     setPassword(pass);
   }, []);
 
-  const [handleLogin] = loginService.useLogin(email, password);
+  const [handleLogin] = loginService.useLogin(email, password, navigation);
 
   const handleGoToHomeScreen = React.useCallback(() => {
     navigation.navigate('HomeScreen');

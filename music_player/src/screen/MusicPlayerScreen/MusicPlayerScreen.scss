@@ -1,0 +1,45 @@
+/**
+ * Styles for Component.tsx
+ * @created 2020-11-19 00:53:49
+ * @author trantien <tientv20@fpt.com.vn>
+ */
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.spin {
+  border-radius: 1000px;
+  margin-bottom: 100px;
+}
+
+.viewImage {
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewBtn {
+  position: absolute;
+  bottom: 0;
+}
+
+.slider {
+  width: 200px;
+}
+
+.thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.track {
+  height: 2px;
+  border-radius: 1px;
+}

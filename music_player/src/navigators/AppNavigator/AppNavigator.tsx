@@ -2,6 +2,8 @@ import React, {FC, PropsWithChildren, ReactElement} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../../screen/HomeScreen/HomeScreen';
 import {StatusBar} from 'react-native';
+import LoginScreen from '../../screen/LoginScreen/LoginScreen';
+import MusicPlayerScreen from "../../screen/MusicPlayerScreen/MusicPlayerScreen";
 
 /**
  * File: AppNavigator.tsx
@@ -24,6 +26,16 @@ const AppNavigator: FC<PropsWithChildren<AppNavigatorProps>> = (
           gestureEnabled: false,
           gestureDirection: 'vertical',
         }}>
+        <Screen
+          name={'LoginScreen'}
+          component={LoginScreen}
+          initialParams={{}}
+        />
+        <Screen
+          name={'MusicPlayerScreen'}
+          component={MusicPlayerScreen}
+          initialParams={{}}
+        />
         <Screen name={'HomeScreen'} component={HomeScreen} initialParams={{}} />
       </Navigator>
     </>
