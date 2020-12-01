@@ -18,7 +18,9 @@ export class LoginService {
       if (userCurrent) {
         if (userCurrent.password === password) {
           appAsyncStorage.saveUser(userCurrent).then(() => {
-            navigation.navigate('HomeScreen');
+            navigation.navigate('HomeScreen', {
+              userCurrent,
+            });
           });
           globalStateRepository.setUser(userCurrent).then();
         } else {

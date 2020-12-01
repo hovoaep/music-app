@@ -22,13 +22,22 @@
 .imageBackground {
   width: 500px;
   height: 1000px;
-  opacity: 0.3;
+  opacity: 0.7;
+  position: absolute;
+  z-index: -1;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .wrapper {
   margin-top: 20px;
   width: 100%;
   height: 250px;
+  border-radius: 10px;
 }
 
 .slide1 {
@@ -39,11 +48,10 @@
   border-radius: 10px;
 }
 
-.slide2 {
+.viewBanner {
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #97CAE5;
   border-radius: 10px;
 }
 
@@ -70,14 +78,17 @@
 
 .modalView {
   padding: 48px 16px;
-  background-color: #f3bad6;
+  background-color: #f6f6f6;
   flex: 1;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .line {
   flex-direction: row;
   align-items: center;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .name {
@@ -90,4 +101,28 @@
 .backIcon {
   position: absolute;
   right: 0;
+}
+
+.modalBottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 16px;
+  flex: 1;
+}
+
+.logout {
+  color: blue;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.value {
+  margin-left: 16px;
+}
+
+.viewCharts {
+  width: 100%;
+  background-color: #9B9B9B;
+  padding: 16px;
+  border-radius: 10px;
 }

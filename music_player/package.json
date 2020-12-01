@@ -28,6 +28,7 @@
     "react-native-svg": "^12.1.0",
     "react-native-svg-transformer": "^0.14.3",
     "react-native-swiper": "^1.6.0-rc.3",
+    "react-native-track-player": "^1.2.3",
     "reactn": "^2.2.7"
   },
   "devDependencies": {

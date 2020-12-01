@@ -3,3 +3,14 @@
  * @created 2020-11-08 13:55:29
  * @author trantien <tientv20@fpt.com.vn>
  */
+
+.containerView {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding:  3px 16px;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}

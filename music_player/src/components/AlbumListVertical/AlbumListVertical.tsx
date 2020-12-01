@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore
-import styles from './AlbumListHorizontal.scss';
+import styles from './AlbumListVertical.scss';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ import {
  * @type {FC<PropsWithChildren<AlbumListHorizontalProps>>}
  */
 
-function AlbumListHorizontal(props: AlbumListHorizontalProps) {
+function AlbumListVertical(props: AlbumListHorizontalProps) {
   const {navigation, list, title} = props;
 
   const handleGoToPlayer = React.useCallback(
@@ -51,17 +51,19 @@ function AlbumListHorizontal(props: AlbumListHorizontalProps) {
     [handleGoToPlayer],
   );
   return (
-    <View style={styles.container}>
+    <>
       <TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
       </TouchableOpacity>
-      <FlatList
-        data={list}
-        renderItem={renderItem}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-      />
-    </View>
+      <View style={styles.container}>
+        <FlatList
+          data={list}
+          renderItem={renderItem}
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
+    </>
   );
 }
 
@@ -73,12 +75,12 @@ export interface AlbumListHorizontalProps {
   title: string;
 }
 
-AlbumListHorizontal.defaultProps = {
+AlbumListVertical.defaultProps = {
   //
 };
 
-AlbumListHorizontal.propTypes = {
+AlbumListVertical.propTypes = {
   //
 };
 
-export default React.memo(AlbumListHorizontal);
+export default React.memo(AlbumListVertical);

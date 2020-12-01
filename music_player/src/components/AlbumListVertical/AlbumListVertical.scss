@@ -1,0 +1,41 @@
+/**
+ * Styles for Component.tsx
+ * @created 2020-11-16 22:38:33
+ * @author trantien <tientv20@fpt.com.vn>
+ */
+.container {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #9B9B9B;
+  padding: 16px;
+  height: 480px;
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.item {
+  flex-direction: row;
+  border-radius: 10px;
+  margin: 5px;
+  width: 120px;
+}
+
+.image {
+  border-radius: 10px;
+  width: 120px;
+  height: 140px;
+}
+
+.name {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 18px;
+}

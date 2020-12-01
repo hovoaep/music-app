@@ -6,8 +6,8 @@ export class AppAsyncStorage {
     return AsyncStorage.setItem(USER, JSON.stringify(user));
   };
 
-  public getUser = async (key: string) => {
-    return await AsyncStorage.getItem(key);
+  public getUser = async () => {
+    return await JSON.parse(<string>await AsyncStorage.getItem(USER));
   };
 }
 

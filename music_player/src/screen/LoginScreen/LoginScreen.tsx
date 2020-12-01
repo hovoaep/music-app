@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, SafeAreaView, Text, TouchableOpacity, Alert} from 'react-native';
+import {View, SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import {styles} from './StyleLoginScreen';
 import MusicIcon from '../../icons/MusicICon';
 import {Colors} from '../../../styles/Colors';
@@ -10,6 +10,7 @@ import Buton from '../../components/Buton/Buton';
 import EyeIcon from '../../icons/EyeIcon';
 import {StackScreenProps} from '@react-navigation/stack';
 import {loginService} from '../../service/login-service';
+import EyeFlashIcon from '../../icons/EyeFlasIcon';
 
 /**
  * File: LoginScreen.tsx
@@ -17,7 +18,7 @@ import {loginService} from '../../service/login-service';
  * @author trantien <tientv20@fpt.com.vn>
  * @type {FC<PropsWithChildren<LoginScreenProps>>}
  */
-function LoginScreen({navigation, route}: LoginScreenProps) {
+function LoginScreen({navigation}: LoginScreenProps) {
   const [email, setEmail] = React.useState<string>('');
 
   const [password, setPassword] = React.useState<string>('');
@@ -26,15 +27,17 @@ function LoginScreen({navigation, route}: LoginScreenProps) {
     setEmail(email);
   }, []);
 
+  const [showPass, setShowPass] = React.useState<boolean>(false);
+
   const handleChangePassword = React.useCallback((pass) => {
     setPassword(pass);
   }, []);
 
   const [handleLogin] = loginService.useLogin(email, password, navigation);
 
-  const handleGoToHomeScreen = React.useCallback(() => {
-    navigation.navigate('HomeScreen');
-  }, [navigation]);
+  const handleShowPass = React.useCallback(() => {
+    setShowPass(!showPass);
+  }, [showPass]);
 
   return (
     <>
@@ -53,19 +56,28 @@ function LoginScreen({navigation, route}: LoginScreenProps) {
             onChange={handleChangePassword}
             placeholder={'password'}
             leftIcon={<LockIcon color={Colors.Dark} />}
-            rightIcon={<EyeIcon color={Colors.Dark} />}
-            secureTextEntry={true}
+            rightIcon={
+              showPass ? (
+                <EyeFlashIcon color={Colors.Dark} />
+              ) : (
+                <EyeIcon color={Colors.Dark} />
+              )
+            }
+            secureTextEntry={!showPass}
+            showPass={handleShowPass}
           />
 
           <View style={styles.buttonView}>
             <Buton onPress={handleLogin} text={'Login'} color={'#12cad6'} />
           </View>
 
-          <TouchableOpacity>
-            <Text style={styles.lineNewAccount}>
-              Create an <Text style={styles.account}>Account</Text>
-            </Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity>
+              <Text style={styles.lineNewAccount}>
+                Create an <Text style={styles.account}>Account</Text>
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </>
